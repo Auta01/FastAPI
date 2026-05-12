@@ -1,0 +1,16 @@
+from  fastapi import FastAPI
+from model import Product
+app = FastAPI() 
+@app.get('/')
+def greet():
+    return 'welcome to telusko trac'
+
+Products = [
+    Product(1,'phone', 'budget phone',99,10),
+    Product(2, 'laptop','gaming laptop',999,6)
+]
+
+
+@app.get('/products') 
+def get_all_products():
+   return products   
